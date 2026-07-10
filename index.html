@@ -1,104 +1,1239 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Vorgentia Research | VORG | Preferido | Abhishek Kumar | A. Kumar | V. Abhishek </title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta
+name="description"
+content="Vorgentia Research (VORG | PREFERIDO) - Independent Scientific Research, Research Publications, Research Portal, Technical White Papers, Research Artifacts and Ongoing Research Activities.">
+
+<meta
+name="keywords"
+content="Vorgentia Research, VORG, Preferido, Abhishek Kumar, A. Kumar, V. Abhishek, Research Portal, Scientific Research, Patent, Research Publications, Simulation">
+
+<meta
+name="author"
+content="Abhishek Kumar">
+
+<meta
+name="robots"
+content="index, follow">
+
+<meta
+name="theme-color"
+content="274C3B">
+
+<title>
+
+Vorgentia Research | VORG | PREFERIDO
+
+</title>
 
 <style>
+
+/*======================================================
+GLOBAL
+======================================================*/
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
 body{
-    margin:0;
-    padding:0;
-    background:#08111f;
-    font-family:Arial, Helvetica, sans-serif;
+
+background:#08111f;
+
+font-family:Arial,Helvetica,sans-serif;
+
+color:#ffffff;
+
+line-height:1.6;
+
+overflow-x:hidden;
+
+}
+
+/*======================================================
+RESEARCH IMAGE VIEWER
+======================================================*/
+
+#viewer{
+
+width:100%;
+
+background:#08111f;
+
+text-align:center;
+
+padding:20px;
+
+}
+
+#viewer img{
+
+display:block;
+
+width:100%;
+
+height:auto;
+
+max-width:1800px;
+
+margin:auto;
+
+border-radius:10px;
+
+border:1px solid #24476d;
+
+box-shadow:0 0 20px rgba(0,0,0,.35);
+
+cursor:pointer;
+
+transition:opacity .4s ease;
+
+}
+
+/*======================================================
+RESEARCH IMAGE CONTAINER
+======================================================*/
+
+
+.portal-container{
+
+max-width:1800px;
+
+margin:auto;
+
+}
+
+/*======================================================
+PORTAL IMAGE
+======================================================*/
+
+.portal-image{
+
+width:100%;
+
+height:auto;
+
+display:block;
+
+border-radius:10px;
+
+border:1px solid #24476d;
+
+box-shadow:0 0 20px rgba(0,0,0,.35);
+
+}
+
+/*======================================================
+IMAGE NAVIGATION
+======================================================*/
+
+.image-navigation{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:15px;
+
+margin-top:25px;
+
+margin-bottom:25px;
+
+flex-wrap:wrap;
+
+}
+
+.image-navigation button{
+
+background:#164b79;
+
+color:#ffffff;
+
+border:1px solid #3f7fb7;
+
+padding:12px 24px;
+
+font-size:15px;
+
+border-radius:8px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.image-navigation button:hover{
+
+background:#2d76b0;
+
+}
+
+/*======================================================
+ACTION BUTTONS
+======================================================*/
+
+.floating-tabs{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+margin:20px auto 40px;
+
+position:static;
+
+max-width:900px;
+
+}
+
+.floating-tabs a{
+
+display:inline-block;
+
+min-width:240px;
+
+text-align:center;
+
+background:#174b78;
+
+color:#ffffff;
+
+padding:12px 18px;
+
+text-decoration:none;
+
+font-size:14px;
+
+border-radius:8px;
+
+border:1px solid #4d91c9;
+
+transition:.3s;
+
+}
+
+.floating-tabs a:hover{
+
+background:#2b74ae;
+
+}
+
+/*======================================================
+FOOTER
+======================================================*/
+
+footer{
+
+margin-top:30px;
+
+padding:25px;
+
+background:#06111b;
+
+border-top:1px solid #23496f;
+
+color:#d3dde8;
+
+text-align:center;
+
+font-size:14px;
+
+}
+
+footer h3{
+
+margin-bottom:20px;
+
+font-size:22px;
+
+color:#ffffff;
+
+}
+/*======================================================
+FOOTER SECTIONS
+======================================================*/
+
+.footer-section{
+
+margin:25px 0;
+
+}
+/*======================================================
+RESPONSIVE
+======================================================*/
+
+/*======================================================
+CONTACT
+======================================================*/
+
+#contact{
+
+margin-top:40px;
+
+}
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:30px;
+
+font-size:28px;
+
+}
+
+.cards{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+max-width:1400px;
+
+margin:auto;
+
+}
+
+.card{
+
+flex:1;
+
+min-width:280px;
+
+max-width:420px;
+
+background:#0d1b2d;
+
+border:1px solid #264b72;
+
+border-radius:10px;
+
+padding:25px;
+
+text-align:center;
+
+}
+
+.card h3{
+
+color:#7cc7ff;
+
+margin-bottom:15px;
+
+}
+
+.card p{
+
+line-height:1.8;
+
+}
+/*======================================================
+RESEARCH SITE STATUS
+======================================================*/
+
+.response-status{
+
+margin-top:25px;
+
+padding:20px;
+
+background:#10253b;
+
+border:1px solid #2f628f;
+
+border-radius:10px;
+
+text-align:center;
+
+color:#ffffff;
+
+max-width:700px;
+
+margin-left:auto;
+
+margin-right:auto;
+
+}
+
+.response-status h3{
+
+margin-bottom:15px;
+
+color:#7cc7ff;
+
+}
+
+.response-status hr{
+
+margin:20px 0;
+
+border:1px solid #294d73;
+
+}
+
+#distribution{
+
+line-height:1.8;
+
+font-weight:bold;
+
+}
+
+#researchMetrics{
+
+line-height:1.8;
+
+}
+@media (max-width:992px){
+
+#viewer{
+
+padding:15px;
+
+}
+
+.portal-container{
+
+width:100%;
+
 }
 
 .portal-image{
-    display:block;
-    width:100%;
-    height:auto;
-}
 
-.links{
-    text-align:center;
-    padding:20px 15px;
-    background:#08111f;
-}
+width:100%;
 
-.links a{
-    display:inline-block;
-    margin:8px;
-    padding:12px 18px;
-    color:#ffffff;
-    text-decoration:none;
-    background:#0f2d4d;
-    border:1px solid #3a6ea5;
-    border-radius:6px;
-    font-size:15px;
-}
-
-.links a:hover{
-    background:#1d4f85;
-}
-
-.notice{
-    text-align:center;
-    color:#cfd8e3;
-    font-size:12px;
-    padding:0 15px 20px;
-}
-
-.footer{
-    text-align:center;
-    color:#7f93aa;
-    font-size:12px;
-    padding:15px;
-    border-top:1px solid #1f3b5f;
-}
-
-@media (max-width:768px){
-
-    .links a{
-        display:block;
-        max-width:320px;
-        margin:10px auto;
-    }
+height:auto;
 
 }
+
+.image-navigation{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.image-navigation button{
+
+width:100%;
+
+max-width:320px;
+
+}
+
+.floating-tabs{
+
+right:10px;
+
+bottom:10px;
+
+max-width:180px;
+
+}
+    
+.floating-tabs a{
+
+font-size:12px;
+
+padding:10px 14px;
+
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
+<!-- ================================================== -->
+<!-- RESEARCH IMAGE VIEWER -->
+<!-- ================================================== -->
+
+<section id="viewer">
+
+<div class="portal-container">
+
 <img
+id="portalImage"
 class="portal-image"
-src="VorgentiaResearch_VORG_Preferido_AbhishekKumar.png"
-alt="Vorgentia Research | VORG | Preferido">
+src="VorgentiaResearch_Summary.png"
+alt="Vorgentia Research">
 
-<div class="links">
+<div class="image-navigation">
 
-<a href="ResearchPaper_Abhishek_Kumar_A_Kumar_2026.pdf" target="_blank">
-Research Paper 2026
+<button id="previousButton">
+
+◀ Previous
+
+</button>
+
+<button id="nextButton">
+
+Next ▶
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================================================== -->
+<!-- FLOATING ACTION TABS -->
+<!-- ================================================== -->
+
+<div class="floating-tabs">
+
+<a
+href="VorgentiaResearch_Technical.Infographics_Online.png"
+target="_blank">
+
+Technical White Paper
+
 </a>
 
-<a href="ResearchCV_Abhishek_Kumar_A_Kumar_2026.pdf" target="_blank">
-Research CV 2026
-</a>
+<a
+href="VorgentiaResearch.VORG_PREFERIDO_DISCLOSURE.pdf"
+target="_blank">
 
-<a href="VorgentiaResearch.VORG_PREFERIDO_DISCLOSURE.pdf" target="_blank">
-Disclosure 2026
+Research Business Disclosure
+
 </a>
 
 </div>
 
-<div class="notice">
-For the best viewing experience, use a desktop or tablet browser. Mobile viewing is supported.
+<!-- ================================================== -->
+<!-- AUTHOR'S SPECIAL MESSAGE -->
+<!-- ================================================== -->
+
+<section
+id="authorMessage"
+style="margin-top:50px;">
+
+<h2
+style="
+text-align:center;
+margin-bottom:25px;
+color:#6ebeff;">
+
+Author's Special Message
+
+</h2>
+
+<div
+style="
+max-width:1000px;
+margin:auto;
+background:#0d1b2d;
+padding:30px;
+border-radius:10px;
+border:1px solid #264b72;">
+
+<p
+style="
+text-align:center;
+font-size:18px;
+margin-bottom:25px;">
+
+<strong>
+
+
+
+How would you currently interpret this Research Site?
+
+
+</strong>
+
+</p>
+
+<div
+style="
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;">
+
+<label>
+
+<input
+type="radio"
+name="researchState"
+value="Binary">
+
+Binary State
+
+</label>
+
+<label>
+
+<input
+type="radio"
+name="researchState"
+value="Absolute">
+
+Absolute State
+
+</label>
+
+<label>
+
+<input
+type="radio"
+name="researchState"
+value="Q">
+
+Q State
+
+</label>
+
 </div>
 
-<div class="footer">
-© 2026 Vorgentia Research | VORG | Preferido | Abhishek Kumar | A. Kumar | V. Abhishek |
+<div
+style="
+text-align:center;
+margin-top:30px;">
+
+<button
+id="submitResponse"
+style="
+padding:14px 30px;
+background:#1b5d93;
+border:none;
+border-radius:8px;
+color:white;
+cursor:pointer;
+font-size:15px;">
+
+Submit Response
+
+</button>
+
+
+<div id="responseStatus" class="response-status">
+
+<h3>Research Site Status</h3>
+
+<p>
+
+Current Interpretation Distribution
+
+</p>
+
+<div id="distribution">
+
+Binary State .............
+<span id="binaryValue">25.00%</span>
+
+<br>
+
+Absolute State ...........
+<span id="absoluteValue">25.00%</span>
+
+<br>
+
+Q State ..................
+<span id="qValue">25.00%</span>
+
 </div>
+
+<hr>
+
+<p>
+
+<strong>
+
+Research Metrics
+
+</strong>
+
+</p>
+
+<div id="researchMetrics">
+
+Sparsity (SP):
+<span id="spValue">0.7500</span>
+
+<br>
+
+Confidence Metric (CV):
+<span id="cvValue">95.00%</span>
+
+<br>
+
+Total Interpretations:
+<span id="totalValue">0</span>
+
+<br>
+
+Latest Interpretation:
+<span id="latestValue">Waiting...</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================================================== -->
+<!-- CONTACT -->
+<!-- ================================================== -->
+
+
+
+<!-- ================================================== -->
+<!-- FOOTER -->
+<!-- ================================================== -->
+
+<footer>
+
+<h3>
+
+Vorgentia Research
+
+</h3>
+
+<p>
+
+Founder:
+A. Kumar
+
+<br>
+
+Inventor:
+Abhishek Kumar
+
+<br>
+
+Independent Research Scientist / CA
+
+</p>
+
+<br>
+
+<p>
+
+31 Eagle Green
+
+<br>
+
+Fremont
+
+CA 94538
+
+USA
+
+</p>
+
+<br>
+
+<p>
+
+Primary Email Contact
+
+<br>
+
+akumar@preferido.us
+
+</p>
+
+<br>
+
+<hr
+style="
+border-color:#294d73;
+margin:25px 0;">
+
+<p>
+
+<strong>
+
+Research Portal Disclaimer
+
+</strong>
+
+</p>
+
+<br>
+
+<p>
+
+This Research Portal provides research,
+educational and scientific information.
+
+Research publications,
+technical white papers,
+research artifacts,
+simulations,
+patent related information
+and associated materials
+may be subject to applicable
+copyright,
+publisher agreements,
+licensing,
+patent,
+and intellectual property protections.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>
+
+Accessibility
+
+</strong>
+
+</p>
+
+<br>
+
+<p>
+
+This Research Portal is intended
+to support viewing across
+desktop,
+browser,
+tablet
+and
+mobile devices.
+
+</p>
+
+<br>
+
+<p>
+
+<strong>
+
+Research Entitlements &
+Licensing
+
+</strong>
+
+</p>
+
+<br>
+
+<p>
+
+Please refer to the
+appropriate Research Portal
+sections or contact
+the Author
+regarding
+Research Entitlements,
+Licensing,
+Commercial Entitlements,
+Research Disclosure,
+or related inquiries.
+
+</p>
+
+<br>
+
+<hr
+style="
+border-color:#294d73;
+margin:25px 0;">
+
+<p>
+
+This Research Site also serves as a Research Artifact Demonstration & Development LabSite, run under Vorgentia Research by the Author (Abhishek Kumar).
+
+</p>
+
+<br>
+
+<p>
+
+© 2026
+
+Vorgentia Research
+
+(VORG | PREFERIDO) | Live Date: July 10, 2026 | Abhishek Kumar
+
+</p>
+
+</footer>
+<!-- ================================================== -->
+<!-- JAVASCRIPT -->
+<!-- ================================================== -->
+
+<script>
+/*======================================================
+IMAGE CONFIGURATION
+======================================================*/
+
+const images = [
+
+"VorgentiaResearch_Summary.png",
+
+"VorgentiaResearch_GitHubScreen1.png",
+
+"VorgentiaResearch_GitHubScreen2.png",
+
+"VorgentiaResearch_GitHubScreen3.png",
+
+"VorgentiaResearch_GitHubScreen4.png"
+
+];
+
+let currentImage = 0;
+
+let slideTimer = null;
+
+let inactivityTimer = null;
+
+const portalImage =
+document.getElementById("portalImage");
+
+const previousButton =
+document.getElementById("previousButton");
+
+const nextButton =
+document.getElementById("nextButton");
+
+const submitButton =
+document.getElementById("submitResponse");
+/*======================================================
+SHOW IMAGE
+======================================================*/
+
+function showImage(index){
+
+currentImage=index;
+
+portalImage.src=images[currentImage];
+
+}
+/*======================================================
+NEXT IMAGE
+======================================================*/
+
+function nextImage(){
+
+currentImage++;
+
+if(currentImage>=images.length){
+
+currentImage=0;
+
+}
+
+showImage(currentImage);
+
+}
+
+/*======================================================
+PREVIOUS IMAGE
+======================================================*/
+
+function previousImage(){
+
+currentImage--;
+
+if(currentImage<0){
+
+currentImage=images.length-1;
+
+}
+
+showImage(currentImage);
+
+}
+
+/*======================================================
+START AUTO ROTATION
+======================================================*/
+
+function startRotation(){
+
+clearInterval(slideTimer);
+
+slideTimer=setInterval(function(){
+
+nextImage();
+
+},60000);
+
+}
+
+/*======================================================
+STOP AUTO ROTATION
+======================================================*/
+
+function stopRotation(){
+
+clearInterval(slideTimer);
+
+}
+
+/*======================================================
+RESET INACTIVITY TIMER
+======================================================*/
+
+function resetInactivity(){
+
+clearTimeout(inactivityTimer);
+
+inactivityTimer=setTimeout(function(){
+
+startRotation();
+
+},300000);
+
+}
+/*======================================================
+IMAGE CLICK
+======================================================*/
+
+portalImage.addEventListener("click",function(){
+
+stopRotation();
+
+nextImage();
+
+resetInactivity();
+
+});
+
+/*======================================================
+NEXT BUTTON
+======================================================*/
+
+nextButton.addEventListener("click",function(){
+
+stopRotation();
+
+nextImage();
+
+resetInactivity();
+
+});
+
+/*======================================================
+PREVIOUS BUTTON
+======================================================*/
+
+previousButton.addEventListener("click",function(){
+
+stopRotation();
+
+previousImage();
+
+resetInactivity();
+
+});
+
+/*======================================================
+KEYBOARD SUPPORT
+======================================================*/
+
+document.addEventListener("keydown",function(e){
+
+if(e.key==="ArrowRight"){
+
+stopRotation();
+
+nextImage();
+
+resetInactivity();
+
+}
+
+if(e.key==="ArrowLeft"){
+
+stopRotation();
+
+previousImage();
+
+resetInactivity();
+
+}
+
+});
+
+/*======================================================
+AUTHOR RESPONSE
+======================================================*/
+
+/*======================================================
+RESEARCH STATE
+======================================================*/
+
+let binary = 25;
+let absolute = 25;
+let qstate = 25;
+
+let totalInterpretations = 0;
+
+let sp = 0.7500;
+let cv = 95.00;
+
+/*======================================================
+UPDATE DISPLAY
+======================================================*/
+
+function updateResearchDisplay(latest){
+
+document.getElementById("binaryValue").textContent =
+binary.toFixed(2) + "%";
+
+document.getElementById("absoluteValue").textContent =
+absolute.toFixed(2) + "%";
+
+document.getElementById("qValue").textContent =
+qstate.toFixed(2) + "%";
+
+document.getElementById("spValue").textContent =
+sp.toFixed(4);
+
+document.getElementById("cvValue").textContent =
+cv.toFixed(2) + "%";
+
+document.getElementById("totalValue").textContent =
+totalInterpretations;
+
+document.getElementById("latestValue").textContent =
+latest;
+
+}
+
+/*======================================================
+AUTHOR RESPONSE
+======================================================*/
+
+if(submitButton){
+
+submitButton.addEventListener("click",function(){
+
+const response =
+document.querySelector(
+'input[name="researchState"]:checked'
+);
+
+if(!response){
+
+alert("Please select one of the Research States.");
+
+return;
+
+}
+
+totalInterpretations++;
+
+if(response.value==="Binary"){
+
+binary++;
+
+}
+
+else if(response.value==="Absolute"){
+
+absolute++;
+
+}
+
+else{
+
+qstate++;
+
+}
+
+/*----------------------------------
+Placeholder calculations
+----------------------------------*/
+
+sp = 0.7500;
+
+cv = 95.00;
+
+/*----------------------------------*/
+
+localStorage.setItem(
+"ResearchState",
+response.value
+);
+
+updateResearchDisplay(response.value);
+
+});
+
+}
+
+/*======================================================
+RESTORE PREVIOUS RESPONSE
+======================================================*/
+
+const savedState =
+localStorage.getItem("ResearchState");
+
+if(savedState){
+
+const savedRadio =
+document.querySelector(
+'input[name="researchState"][value="' +
+savedState +
+'"]'
+);
+
+if(savedRadio){
+
+savedRadio.checked = true;
+
+}
+
+updateResearchDisplay(savedState);
+
+}
+/*======================================================
+INITIALIZE
+======================================================*/
+
+showImage(0);
+
+startRotation();
+</script>
 
 </body>
+
 </html>
