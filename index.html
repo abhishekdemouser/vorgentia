@@ -11,11 +11,11 @@ content="width=device-width, initial-scale=1.0">
 
 <meta
 name="description"
-content="Vorgentia Research (VORG | PREFERIDO) - Independent Scientific Research, Research Publications, Research Portal, Technical White Papers, Research Artifacts and Ongoing Research Activities.">
+content="Vorgentia Research (VORG | PREFERIDO) - Independent Scientific Research, VResearchGPT, Research Publications, Technical Research Artifacts and Ongoing Research Activities.">
 
 <meta
 name="keywords"
-content="Vorgentia Research, VORG, Preferido, Abhishek Kumar, A. Kumar, V. Abhishek, Research Portal, Scientific Research, Patent, Research Publications, Simulation">
+content="Vorgentia Research, VORG, Preferido, VResearchGPT, Abhishek Kumar, A. Kumar, V. Abhishek, Research Portal, Scientific Research, Patent, Research Publications, Simulation">
 
 <meta
 name="author"
@@ -65,6 +65,99 @@ line-height:1.6;
 
 overflow-x:hidden;
 
+}
+
+/*======================================================
+VRESEARCHGPT LAUNCH
+======================================================*/
+
+.gpt-launch{
+max-width:1400px;
+margin:24px auto 10px;
+padding:50px 32px;
+background:linear-gradient(135deg,rgba(12,35,59,.98),rgba(8,17,31,.98));
+border:1px solid #2f628f;
+border-radius:14px;
+box-shadow:0 0 24px rgba(0,0,0,.35);
+text-align:center;
+}
+
+.gpt-launch-badge{
+display:inline-block;
+margin-bottom:18px;
+padding:7px 14px;
+border:1px solid #4d91c9;
+border-radius:999px;
+color:#9dd7ff;
+font-size:13px;
+letter-spacing:.05em;
+text-transform:uppercase;
+}
+
+.gpt-launch h1{
+margin-bottom:14px;
+color:#ffffff;
+font-size:clamp(32px,5vw,58px);
+line-height:1.1;
+}
+
+.gpt-launch h2{
+margin-bottom:20px;
+color:#76c7ff;
+font-size:clamp(18px,2.4vw,28px);
+font-weight:500;
+}
+
+.gpt-launch p{
+max-width:900px;
+margin:0 auto 22px;
+color:#d7e6f5;
+font-size:16px;
+}
+
+.gpt-launch-details{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+margin:0 auto 26px;
+}
+
+.gpt-launch-details span{
+padding:8px 12px;
+background:#10253b;
+border:1px solid #294d73;
+border-radius:7px;
+color:#d7e6f5;
+font-size:13px;
+}
+
+.gpt-launch-action{
+display:inline-block;
+min-width:240px;
+padding:14px 24px;
+background:#1b6da8;
+border:1px solid #6db8ef;
+border-radius:8px;
+color:#ffffff;
+font-size:16px;
+font-weight:bold;
+text-decoration:none;
+transition:.3s;
+}
+
+.gpt-launch-action:hover,
+.gpt-launch-action:focus{
+background:#2d83bf;
+outline:2px solid #9dd7ff;
+outline-offset:3px;
+}
+
+.gpt-launch-note{
+margin-top:16px !important;
+margin-bottom:0 !important;
+color:#aebfd0 !important;
+font-size:13px !important;
 }
 
 /*======================================================
@@ -416,6 +509,16 @@ line-height:1.8;
 }
 @media (max-width:992px){
 
+.gpt-launch{
+margin:14px;
+padding:38px 20px;
+}
+
+.gpt-launch-action{
+width:100%;
+max-width:340px;
+}
+
 #viewer{
 
 padding:15px;
@@ -479,6 +582,61 @@ padding:10px 14px;
 <body>
 
 <!-- ================================================== -->
+<!-- VRESEARCHGPT PUBLIC LAUNCH -->
+<!-- Replace PASTE_PUBLIC_GPT_LINK_HERE before deployment -->
+<!-- ================================================== -->
+
+<section
+id="vresearchgpt"
+class="gpt-launch"
+aria-labelledby="vresearchgptTitle">
+
+<span class="gpt-launch-badge">
+Vorgentia Research Public Research Access
+</span>
+
+<h1 id="vresearchgptTitle">
+VResearchGPT
+</h1>
+
+<h2>
+Research Knowledge, Applied Reasoning and Interpretation Layer
+</h2>
+
+<p>
+Explore cleared Vorgentia Research papers, research artifacts,
+formulations and ongoing contributions through a publicly accessible
+research-focused GPT.
+</p>
+
+<div
+class="gpt-launch-details"
+aria-label="VResearchGPT research coverage">
+
+<span>Research Patent</span>
+<span>Research &amp; Journal Papers</span>
+<span>Research Artifacts</span>
+<span>VORG | PREFERIDO</span>
+
+</div>
+
+<a
+class="gpt-launch-action"
+href="PASTE_PUBLIC_GPT_LINK_HERE"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Begin VResearchGPT in ChatGPT">
+Begin VResearchGPT
+</a>
+
+<p class="gpt-launch-note">
+A ChatGPT account is required to begin a conversation.
+VResearchGPT operates within its supplied research and disclosure boundaries.
+</p>
+
+</section>
+
+<!-- ================================================== -->
 <!-- RESEARCH IMAGE VIEWER -->
 <!-- ================================================== -->
 
@@ -521,7 +679,7 @@ Next ▶
 href="VorgentiaResearch_Technical.Infographics_Online.png"
 target="_blank">
 
-Technical White Paper
+Technical Research Artifact
 
 </a>
 
@@ -529,7 +687,7 @@ Technical White Paper
 href="VorgentiaResearch.VORG_PREFERIDO_DISCLOSURE.pdf"
 target="_blank">
 
-Research Business Disclosure
+Research Disclosure
 
 </a>
 
@@ -814,7 +972,7 @@ This Research Portal provides research,
 educational and scientific information.
 
 Research publications,
-technical white papers,
+technical research artifacts,
 research artifacts,
 simulations,
 patent related information
@@ -1252,4 +1410,3 @@ startRotation();
 
 </body>
 
-</html>
