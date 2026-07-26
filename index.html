@@ -153,11 +153,176 @@ outline:2px solid #9dd7ff;
 outline-offset:3px;
 }
 
+.gpt-launch-action.is-disabled{
+background:#26384a;
+border-color:#435466;
+color:#8fa0b2;
+cursor:not-allowed;
+}
+
+.gpt-launch-action.is-disabled:hover,
+.gpt-launch-action.is-disabled:focus{
+background:#26384a;
+outline:2px solid #6e8194;
+}
+
+.gpt-selection-requirement{
+max-width:720px !important;
+margin:16px auto 0 !important;
+padding:10px 14px;
+background:#17283a;
+border:1px solid #405f7d;
+border-radius:7px;
+color:#d7e6f5 !important;
+font-size:13px !important;
+}
+
+.gpt-selection-requirement a{
+color:#8fd2ff;
+font-weight:bold;
+}
+
+.gpt-selection-requirement.complete{
+background:#123126;
+border-color:#39795f;
+color:#c9f5df !important;
+}
+
 .gpt-launch-note{
 margin-top:16px !important;
 margin-bottom:0 !important;
 color:#aebfd0 !important;
 font-size:13px !important;
+}
+
+.gpt-entry-observer{
+max-width:900px;
+margin:24px auto 0;
+padding:20px;
+background:#0b1d30;
+border:1px solid #315f87;
+border-radius:10px;
+text-align:left;
+}
+
+.gpt-entry-observer h3{
+margin-bottom:8px;
+color:#9dd7ff;
+font-size:18px;
+}
+
+.gpt-entry-observer-intro{
+margin:0 0 16px !important;
+font-size:13px !important;
+color:#bcd0e3 !important;
+}
+
+.gpt-entry-summary{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:10px;
+margin-bottom:16px;
+}
+
+.gpt-entry-summary div{
+padding:10px 12px;
+background:#10253b;
+border:1px solid #294d73;
+border-radius:7px;
+font-size:13px;
+}
+
+.gpt-entry-summary strong{
+display:block;
+color:#76c7ff;
+}
+
+.gpt-state-vector{
+padding:12px;
+background:#081726;
+border:1px solid #294d73;
+border-radius:7px;
+color:#d7e6f5;
+font-family:Consolas,Monaco,monospace;
+font-size:12px;
+line-height:1.7;
+overflow-wrap:anywhere;
+}
+
+.gpt-entry-events{
+margin:14px 0 0;
+padding-left:20px;
+color:#d7e6f5;
+font-size:13px;
+}
+
+.gpt-entry-events li{
+margin-bottom:7px;
+}
+
+.gpt-destination-confirmation{
+display:none;
+margin-top:18px;
+padding-top:16px;
+border-top:1px solid #294d73;
+}
+
+.gpt-destination-confirmation.visible{
+display:block;
+}
+
+.gpt-destination-confirmation h4{
+margin-bottom:8px;
+color:#9dd7ff;
+}
+
+.gpt-destination-confirmation p{
+margin:0 0 12px !important;
+font-size:13px !important;
+color:#bcd0e3 !important;
+}
+
+.gpt-confirmation-options{
+display:grid;
+gap:9px;
+}
+
+.gpt-confirmation-options label{
+display:flex;
+align-items:flex-start;
+gap:9px;
+font-size:13px;
+}
+
+.gpt-entry-controls{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-top:16px;
+}
+
+.gpt-entry-controls button{
+padding:10px 14px;
+background:#174b78;
+border:1px solid #4d91c9;
+border-radius:7px;
+color:#ffffff;
+cursor:pointer;
+}
+
+.gpt-entry-controls button:hover,
+.gpt-entry-controls button:focus{
+background:#2b74ae;
+outline:2px solid #9dd7ff;
+outline-offset:2px;
+}
+
+.gpt-entry-controls button:disabled{
+background:#26384a;
+border-color:#435466;
+color:#8fa0b2;
+cursor:not-allowed;
+outline:none;
 }
 
 /*======================================================
@@ -507,6 +672,30 @@ font-weight:bold;
 line-height:1.8;
 
 }
+
+.research-selection-error{
+display:none;
+max-width:620px;
+margin:16px auto 0;
+padding:10px 14px;
+background:#3a1720;
+border:1px solid #a84f63;
+border-radius:7px;
+color:#ffd4dc;
+font-size:13px;
+}
+
+.research-selection-error.visible{
+display:block;
+}
+
+.research-artifact-context{
+max-width:760px;
+margin:12px auto 0;
+color:#c8d8e8;
+font-size:13px;
+line-height:1.75;
+}
 @media (max-width:992px){
 
 .gpt-launch{
@@ -517,6 +706,10 @@ padding:38px 20px;
 .gpt-launch-action{
 width:100%;
 max-width:340px;
+}
+
+.gpt-entry-summary{
+grid-template-columns:1fr;
 }
 
 #viewer{
@@ -621,18 +814,137 @@ aria-label="VResearchGPT research coverage">
 </div>
 
 <a
-class="gpt-launch-action"
+id="beginVResearchGPT"
+class="gpt-launch-action is-disabled"
 href="https://chatgpt.com/g/g-6a654bd6580881919304cb3a6ad6dcba-vresearchgpt"
 target="_blank"
 rel="noopener noreferrer"
+data-node="vresearchgpt-begin"
+data-node-state="0"
+data-node-validity="0"
+data-path-state="gated"
+data-affordance-state="unavailable"
+aria-disabled="true"
+aria-describedby="vresearchgptStateObserver"
 aria-label="Begin VResearchGPT in ChatGPT">
 Begin VResearchGPT
 </a>
+
+<p
+id="gptSelectionRequirement"
+class="gpt-selection-requirement">
+A Research State selection is required before Begin VResearchGPT becomes
+active. Review and submit one of the four interpretations under the
+<a href="#authorMessage">Author's Special Message</a>.
+</p>
 
 <p class="gpt-launch-note">
 A ChatGPT account is required to begin a conversation.
 VResearchGPT operates within its supplied research and disclosure boundaries.
 </p>
+
+<section
+id="vresearchgptStateObserver"
+class="gpt-entry-observer"
+aria-live="polite"
+aria-labelledby="vresearchgptObserverTitle">
+
+<h3 id="vresearchgptObserverTitle">
+VResearchGPT Entry-State Observer
+</h3>
+
+<p class="gpt-entry-observer-intro">
+This local research trace records observable state signals, state preservation,
+Node-State Validity and path transitions from the Vorgentia Research site.
+It does not inspect the external ChatGPT session.
+</p>
+
+<div class="gpt-entry-summary">
+
+<div>
+<strong>Current Stage</strong>
+<span id="gptCurrentStage">Research State selection required</span>
+</div>
+
+<div>
+<strong>Evidence Source</strong>
+<span id="gptEvidenceSource">Automatically observed on this site</span>
+</div>
+
+<div>
+<strong>Node-State Validity</strong>
+<span id="gptNodeValidity">Begin path not yet admissible: V(v)=0</span>
+</div>
+
+<div>
+<strong>Path Status</strong>
+<span id="gptPathStatus">Entry path gated until a valid interpretation is submitted</span>
+</div>
+
+</div>
+
+<div
+id="gptStateVector"
+class="gpt-state-vector"
+aria-label="Current VResearchGPT entry state vector">
+</div>
+
+<ol id="gptEntryEvents" class="gpt-entry-events"></ol>
+
+<div
+id="gptDestinationConfirmation"
+class="gpt-destination-confirmation">
+
+<h4>Destination-side confirmation</h4>
+
+<p>
+The Vorgentia Research site cannot inspect the separate ChatGPT tab.
+Select only the conditions you directly observed. These records are labeled
+as user-confirmed evidence.
+</p>
+
+<div class="gpt-confirmation-options">
+
+<label>
+<input type="checkbox" id="confirmDestination">
+The VResearchGPT destination and identity were displayed.
+</label>
+
+<label>
+<input type="checkbox" id="confirmStarter">
+The Begin VResearchGPT starter was visible and active.
+</label>
+
+<label>
+<input type="checkbox" id="confirmResponse">
+The Begin VResearchGPT prompt was submitted and an opening response was received.
+</label>
+
+</div>
+
+<div class="gpt-entry-controls">
+
+<button id="confirmDestinationStates" type="button">
+Record Confirmed States
+</button>
+
+<button id="downloadEntryTraceText" type="button" disabled>
+Download Trace Report
+</button>
+
+<button id="downloadEntryTraceJson" type="button" disabled>
+Download JSON Log
+</button>
+
+<button id="resetEntryTrace" type="button">
+Reset Entry Trace
+</button>
+
+</div>
+
+</div>
+
+</section>
 
 </section>
 
@@ -787,9 +1099,20 @@ Absolute State
 <input
 type="radio"
 name="researchState"
-value="Q">
+value="DifferentialQ">
 
-Q State
+Differential Q State
+
+</label>
+
+<label>
+
+<input
+type="radio"
+name="researchState"
+value="NonBinary">
+
+Non-Binary State
 
 </label>
 
@@ -815,6 +1138,17 @@ Submit Response
 
 </button>
 
+<div
+id="researchSelectionError"
+class="research-selection-error"
+role="alert">
+
+No Research State selected. Current response-node state:
+0 — Inactive / Undefined. Select one of the four available
+interpretations to continue.
+
+</div>
+
 
 <div id="responseStatus" class="response-status">
 
@@ -828,18 +1162,23 @@ Current Interpretation Distribution
 
 <div id="distribution">
 
-Binary State .............
-<span id="binaryValue">25.00%</span>
+Binary State ..................
+<span id="binaryValue">0.00%</span>
 
 <br>
 
-Absolute State ...........
-<span id="absoluteValue">25.00%</span>
+Absolute State ................
+<span id="absoluteValue">0.00%</span>
 
 <br>
 
-Q State ..................
-<span id="qValue">25.00%</span>
+Differential Q State ..........
+<span id="qValue">0.00%</span>
+
+<br>
+
+Non-Binary State ..............
+<span id="nonBinaryValue">0.00%</span>
 
 </div>
 
@@ -849,7 +1188,7 @@ Q State ..................
 
 <strong>
 
-Research Metrics
+Submitted Response Summary
 
 </strong>
 
@@ -857,18 +1196,13 @@ Research Metrics
 
 <div id="researchMetrics">
 
-Sparsity (SP):
-<span id="spValue">0.7500</span>
-
-<br>
-
-Confidence Metric (CV):
-<span id="cvValue">95.00%</span>
-
-<br>
-
-Total Interpretations:
+Valid Interpretations:
 <span id="totalValue">0</span>
+
+<br>
+
+Unresolved / No-Selection Attempts:
+<span id="unresolvedValue">0</span>
 
 <br>
 
@@ -876,6 +1210,29 @@ Latest Interpretation:
 <span id="latestValue">Waiting...</span>
 
 </div>
+
+<hr>
+
+<p>
+
+<strong>
+
+Research Artifact Context
+
+</strong>
+
+</p>
+
+<p class="research-artifact-context">
+Research Artifact Context: This simplified interaction demonstrates how
+observable selections, response-node states, state preservation and
+interpretation paths can support the establishment of research artifacts
+discussed across the associated U.S. Patent, Research and Journal Papers,
+Simulations, Experimentation, Vorgentia Research Prototype Build, related
+Ongoing Research Initiatives and Research Funding. It does not reproduce
+the complete simulation metrics, validation environment or research
+formulations.
+</p>
 
 </div>
 
@@ -1108,6 +1465,54 @@ document.getElementById("nextButton");
 
 const submitButton =
 document.getElementById("submitResponse");
+
+const beginVResearchGPT =
+document.getElementById("beginVResearchGPT");
+
+const gptSelectionRequirement =
+document.getElementById("gptSelectionRequirement");
+
+const gptCurrentStage =
+document.getElementById("gptCurrentStage");
+
+const gptEvidenceSource =
+document.getElementById("gptEvidenceSource");
+
+const gptNodeValidity =
+document.getElementById("gptNodeValidity");
+
+const gptPathStatus =
+document.getElementById("gptPathStatus");
+
+const gptStateVector =
+document.getElementById("gptStateVector");
+
+const gptEntryEvents =
+document.getElementById("gptEntryEvents");
+
+const gptDestinationConfirmation =
+document.getElementById("gptDestinationConfirmation");
+
+const confirmDestination =
+document.getElementById("confirmDestination");
+
+const confirmStarter =
+document.getElementById("confirmStarter");
+
+const confirmResponse =
+document.getElementById("confirmResponse");
+
+const confirmDestinationStates =
+document.getElementById("confirmDestinationStates");
+
+const downloadEntryTraceText =
+document.getElementById("downloadEntryTraceText");
+
+const downloadEntryTraceJson =
+document.getElementById("downloadEntryTraceJson");
+
+const resetEntryTrace =
+document.getElementById("resetEntryTrace");
 /*======================================================
 SHOW IMAGE
 ======================================================*/
@@ -1274,41 +1679,142 @@ AUTHOR RESPONSE
 RESEARCH STATE
 ======================================================*/
 
-let binary = 25;
-let absolute = 25;
-let qstate = 25;
+const researchDistributionKey =
+"VorgentiaResearchInterpretationDistributionV2";
 
-let totalInterpretations = 0;
+const researchStateLabels = {
+Binary:"Binary State",
+Absolute:"Absolute State",
+DifferentialQ:"Differential Q State",
+NonBinary:"Non-Binary State"
+};
 
-let sp = 0.7500;
-let cv = 95.00;
+function createResearchDistribution(){
+
+return {
+counts:{
+Binary:0,
+Absolute:0,
+DifferentialQ:0,
+NonBinary:0
+},
+totalInterpretations:0,
+unresolvedAttempts:0,
+latest:"Waiting..."
+};
+
+}
+
+function loadResearchDistribution(){
+
+const savedDistribution =
+localStorage.getItem(researchDistributionKey);
+
+if(!savedDistribution){
+
+return createResearchDistribution();
+
+}
+
+try{
+
+const parsed =
+JSON.parse(savedDistribution);
+
+if(
+!parsed.counts ||
+typeof parsed.totalInterpretations !== "number" ||
+typeof parsed.unresolvedAttempts !== "number"
+){
+
+return createResearchDistribution();
+
+}
+
+return parsed;
+
+}
+
+catch(error){
+
+return createResearchDistribution();
+
+}
+
+}
+
+let researchDistribution =
+loadResearchDistribution();
 
 /*======================================================
 UPDATE DISPLAY
 ======================================================*/
 
-function updateResearchDisplay(latest){
+function researchPercentage(value){
+
+if(researchDistribution.totalInterpretations === 0){
+
+return 0;
+
+}
+
+return (
+value /
+researchDistribution.totalInterpretations
+) * 100;
+
+}
+
+function updateResearchDisplay(){
 
 document.getElementById("binaryValue").textContent =
-binary.toFixed(2) + "%";
+researchPercentage(
+researchDistribution.counts.Binary
+).toFixed(2) + "%";
 
 document.getElementById("absoluteValue").textContent =
-absolute.toFixed(2) + "%";
+researchPercentage(
+researchDistribution.counts.Absolute
+).toFixed(2) + "%";
 
 document.getElementById("qValue").textContent =
-qstate.toFixed(2) + "%";
+researchPercentage(
+researchDistribution.counts.DifferentialQ
+).toFixed(2) + "%";
 
-document.getElementById("spValue").textContent =
-sp.toFixed(4);
-
-document.getElementById("cvValue").textContent =
-cv.toFixed(2) + "%";
+document.getElementById("nonBinaryValue").textContent =
+researchPercentage(
+researchDistribution.counts.NonBinary
+).toFixed(2) + "%";
 
 document.getElementById("totalValue").textContent =
-totalInterpretations;
+researchDistribution.totalInterpretations;
+
+document.getElementById("unresolvedValue").textContent =
+researchDistribution.unresolvedAttempts;
 
 document.getElementById("latestValue").textContent =
-latest;
+researchDistribution.latest;
+
+}
+
+function recordUnresolvedResearchSelection(){
+
+researchDistribution.unresolvedAttempts++;
+
+researchDistribution.latest =
+"Unresolved — 0 (Inactive / Undefined)";
+
+localStorage.setItem(
+researchDistributionKey,
+JSON.stringify(researchDistribution)
+);
+
+document.getElementById(
+"researchSelectionError"
+).classList.add("visible");
+
+updateResearchDisplay();
 
 }
 
@@ -1327,48 +1833,48 @@ document.querySelector(
 
 if(!response){
 
-alert("Please select one of the Research States.");
+recordUnresolvedResearchSelection();
 
 return;
 
 }
 
-totalInterpretations++;
+document.getElementById(
+"researchSelectionError"
+).classList.remove("visible");
 
-if(response.value==="Binary"){
+researchDistribution.totalInterpretations++;
 
-binary++;
+if(
+Object.prototype.hasOwnProperty.call(
+researchDistribution.counts,
+response.value
+)
+){
 
-}
-
-else if(response.value==="Absolute"){
-
-absolute++;
-
-}
-
-else{
-
-qstate++;
+researchDistribution.counts[response.value]++;
 
 }
 
-/*----------------------------------
-Placeholder calculations
-----------------------------------*/
+researchDistribution.latest =
+researchStateLabels[response.value];
 
-sp = 0.7500;
-
-cv = 95.00;
-
-/*----------------------------------*/
+localStorage.setItem(
+researchDistributionKey,
+JSON.stringify(researchDistribution)
+);
 
 localStorage.setItem(
 "ResearchState",
 response.value
 );
 
-updateResearchDisplay(response.value);
+updateResearchDisplay();
+
+setBeginVResearchGPTAvailability(
+true,
+true
+);
 
 });
 
@@ -1399,6 +1905,1075 @@ savedRadio.checked = true;
 updateResearchDisplay(savedState);
 
 }
+
+updateResearchDisplay();
+
+/*======================================================
+VRESEARCHGPT ENTRY-STATE TRACE
+======================================================*/
+
+const gptEntryTraceKey = "VResearchGPTEntryTraceV2";
+
+const gptStateDefinitions = {
+"+1":"Active / Defined",
+"0":"Inactive / Undefined",
+"-1":"Active / Undefined",
+"Q":"Ambiguous Evaluative State"
+};
+
+function researchSelectionIsComplete(){
+
+return (
+researchDistribution.totalInterpretations > 0 &&
+researchDistribution.latest !== "Waiting..." &&
+researchDistribution.latest !==
+"Unresolved — 0 (Inactive / Undefined)"
+);
+
+}
+
+const initialGptStateVector = {
+portal:"+1",
+beginNode:
+researchSelectionIsComplete() ? "+1" : "0",
+selectionEvent:"0",
+linkInvocation:"0",
+destination:"0",
+starter:"0",
+promptSubmission:"0",
+openingResponse:"0"
+};
+
+function createGptEntryTrace(){
+
+return {
+reportTitle:"VResearchGPT Entry Traceability Report",
+researchOrganization:"Vorgentia Research (VORG | PREFERIDO)",
+traceVersion:"1.0",
+createdAt:new Date().toISOString(),
+sourcePage:window.location.href,
+registeredDestination:beginVResearchGPT ?
+beginVResearchGPT.href : "",
+stateDefinitions:gptStateDefinitions,
+evidenceBoundary:
+"Source events are automatically observed on the Vorgentia Research site. " +
+"Destination events are recorded only as user-confirmed evidence.",
+stateVector:Object.assign({},initialGptStateVector),
+nodeValidity:{
+portal:1,
+beginNode:
+researchSelectionIsComplete() ? 1 : 0,
+selectionEvent:null,
+linkInvocation:null,
+destination:null,
+starter:null,
+promptSubmission:null,
+openingResponse:null
+},
+pathStatus:"available",
+qEvaluation:{
+evaluated:true,
+derived:false,
+reason:
+"No structurally admissible relational contrast has been observed."
+},
+events:[]
+};
+
+}
+
+function loadGptEntryTrace(){
+
+const savedTrace =
+sessionStorage.getItem(gptEntryTraceKey);
+
+if(!savedTrace){
+
+return createGptEntryTrace();
+
+}
+
+try{
+
+return JSON.parse(savedTrace);
+
+}
+
+catch(error){
+
+return createGptEntryTrace();
+
+}
+
+}
+
+let gptEntryTrace = loadGptEntryTrace();
+
+function saveGptEntryTrace(){
+
+sessionStorage.setItem(
+gptEntryTraceKey,
+JSON.stringify(gptEntryTrace)
+);
+
+}
+
+function gptStateVectorText(){
+
+const state = gptEntryTrace.stateVector;
+
+return "X(t) = {" +
+" Portal:" + state.portal +
+", Begin:" + state.beginNode +
+", Selection:" + state.selectionEvent +
+", Link:" + state.linkInvocation +
+", Destination:" + state.destination +
+", Starter:" + state.starter +
+", Prompt:" + state.promptSubmission +
+", Response:" + state.openingResponse +
+" }";
+
+}
+
+function renderGptEntryTrace(){
+
+if(!gptStateVector){
+
+return;
+
+}
+
+gptStateVector.textContent = gptStateVectorText();
+
+gptEntryEvents.innerHTML = "";
+
+gptEntryTrace.events.slice(-8).forEach(function(event){
+
+const item = document.createElement("li");
+
+item.textContent =
+"Stage " + event.sequence +
+" — " + event.label +
+": " + event.derivation;
+
+gptEntryEvents.appendChild(item);
+
+});
+
+const completed =
+gptEntryTrace.stateVector.destination === "+1" &&
+gptEntryTrace.stateVector.starter === "+1" &&
+gptEntryTrace.stateVector.promptSubmission === "+1" &&
+gptEntryTrace.stateVector.openingResponse === "+1";
+
+downloadEntryTraceText.disabled = !completed;
+downloadEntryTraceJson.disabled = !completed;
+
+if(gptEntryTrace.pathStatus === "complete"){
+
+gptCurrentStage.textContent =
+"VResearchGPT conversation begun";
+
+gptEvidenceSource.textContent =
+"Automatic source evidence + user-confirmed destination evidence";
+
+gptNodeValidity.textContent =
+"Completed entry path recorded";
+
+gptPathStatus.textContent =
+"VResearchGPT entry trace complete";
+
+}
+
+}
+
+function recordGptEntryEvent(config){
+
+const previousState =
+Object.assign({},gptEntryTrace.stateVector);
+
+Object.keys(config.stateChanges || {}).forEach(function(key){
+
+gptEntryTrace.stateVector[key] =
+config.stateChanges[key];
+
+});
+
+Object.keys(config.validityChanges || {}).forEach(function(key){
+
+gptEntryTrace.nodeValidity[key] =
+config.validityChanges[key];
+
+});
+
+if(config.pathStatus){
+
+gptEntryTrace.pathStatus =
+config.pathStatus;
+
+}
+
+const changedStates = [];
+
+Object.keys(gptEntryTrace.stateVector).forEach(function(key){
+
+if(previousState[key] !==
+gptEntryTrace.stateVector[key]){
+
+changedStates.push({
+node:key,
+from:previousState[key],
+to:gptEntryTrace.stateVector[key],
+fromDefinition:gptStateDefinitions[previousState[key]],
+toDefinition:
+gptStateDefinitions[gptEntryTrace.stateVector[key]]
+});
+
+}
+
+});
+
+gptEntryTrace.events.push({
+sequence:gptEntryTrace.events.length + 1,
+timestamp:new Date().toISOString(),
+label:config.label,
+systemBoundary:config.systemBoundary,
+evidenceSource:config.evidenceSource,
+observableEvidence:config.observableEvidence,
+computingState:config.computingState,
+computationalInterpretation:
+config.computationalInterpretation,
+changedStates:changedStates,
+preservedStateVector:
+Object.assign({},gptEntryTrace.stateVector),
+nodeStateValidity:
+Object.assign({},gptEntryTrace.nodeValidity),
+pathStatus:gptEntryTrace.pathStatus,
+boundaryConditions:config.boundaryConditions || [],
+qEvaluation:{
+evaluated:true,
+derived:false,
+reason:
+"No structurally admissible relational contrast was derived at this stage."
+},
+derivation:config.derivation
+});
+
+saveGptEntryTrace();
+renderGptEntryTrace();
+
+}
+
+function hasGptEntryEvent(label){
+
+return gptEntryTrace.events.some(function(event){
+
+return event.label === label;
+
+});
+
+}
+
+function setBeginVResearchGPTAvailability(
+isAvailable,
+recordTransition
+){
+
+if(!beginVResearchGPT){
+
+return;
+
+}
+
+if(isAvailable){
+
+beginVResearchGPT.classList.remove(
+"is-disabled"
+);
+
+beginVResearchGPT.setAttribute(
+"aria-disabled",
+"false"
+);
+
+beginVResearchGPT.dataset.nodeState =
+"+1";
+
+beginVResearchGPT.dataset.nodeValidity =
+"1";
+
+beginVResearchGPT.dataset.pathState =
+"available";
+
+beginVResearchGPT.dataset.affordanceState =
+"available";
+
+gptSelectionRequirement.classList.add(
+"complete"
+);
+
+gptSelectionRequirement.textContent =
+"Research State requirement completed. Begin VResearchGPT is now active and available.";
+
+gptCurrentStage.textContent =
+"Begin VResearchGPT available";
+
+gptNodeValidity.textContent =
+"Begin node admissible: V(v)=1";
+
+gptPathStatus.textContent =
+"Registered VResearchGPT path available";
+
+if(
+recordTransition &&
+gptEntryTrace.stateVector.beginNode !== "+1"
+){
+
+recordGptEntryEvent({
+label:"Research State requirement satisfied",
+systemBoundary:"Vorgentia Research site",
+evidenceSource:"Automatically observed",
+observableEvidence:
+"A valid Research State interpretation was submitted through the required four-option selection.",
+computingState:
+"Research State submission accepted and Begin VResearchGPT enabled.",
+computationalInterpretation:
+"The Begin node changed from Inactive / Undefined to Active / Defined and became admissible for entry-path formation.",
+stateChanges:{beginNode:"+1"},
+validityChanges:{beginNode:1},
+pathStatus:"available",
+boundaryConditions:[
+"One of four Research State interpretations submitted",
+"Registered VResearchGPT URL remains defined"
+],
+derivation:
+"The required interpretation input satisfied the entry boundary and enabled the Begin VResearchGPT path."
+});
+
+}
+
+}
+
+else{
+
+beginVResearchGPT.classList.add(
+"is-disabled"
+);
+
+beginVResearchGPT.setAttribute(
+"aria-disabled",
+"true"
+);
+
+beginVResearchGPT.dataset.nodeState =
+"0";
+
+beginVResearchGPT.dataset.nodeValidity =
+"0";
+
+beginVResearchGPT.dataset.pathState =
+"gated";
+
+beginVResearchGPT.dataset.affordanceState =
+"unavailable";
+
+gptSelectionRequirement.classList.remove(
+"complete"
+);
+
+gptSelectionRequirement.innerHTML =
+"A Research State selection is required before Begin VResearchGPT becomes active. " +
+"Review and submit one of the four interpretations under the " +
+"<a href=\"#authorMessage\">Author's Special Message</a>.";
+
+gptCurrentStage.textContent =
+"Research State selection required";
+
+gptNodeValidity.textContent =
+"Begin path not yet admissible: V(v)=0";
+
+gptPathStatus.textContent =
+"Entry path gated until a valid interpretation is submitted";
+
+}
+
+}
+
+if(!hasGptEntryEvent("Research portal evaluated")){
+
+recordGptEntryEvent({
+label:"Research portal evaluated",
+systemBoundary:"Vorgentia Research site",
+evidenceSource:"Automatically observed",
+observableEvidence:
+"The VResearchGPT launch section, required Research State selection and registered Begin link are present in the rendered document.",
+computingState:
+"Portal, Research State boundary and Begin node rendered.",
+computationalInterpretation:
+"The portal is Active / Defined. The Begin node is evaluated according to whether a valid Research State was previously submitted.",
+stateChanges:{},
+validityChanges:{
+portal:1,
+beginNode:
+researchSelectionIsComplete() ? 1 : 0
+},
+pathStatus:
+researchSelectionIsComplete() ?
+"available" : "gated",
+boundaryConditions:[
+"Research State selection required",
+"Registered destination URL is defined"
+],
+derivation:
+"The portal is available. The Begin entry path remains gated until the required interpretation has been submitted."
+});
+
+}
+
+let affordanceRecorded =
+hasGptEntryEvent("Selection affordance confirmed");
+
+function recordGptAffordance(){
+
+if(
+beginVResearchGPT.getAttribute(
+"aria-disabled"
+) === "true"
+){
+
+gptCurrentStage.textContent =
+"Research State selection required";
+
+gptPathStatus.textContent =
+"Begin VResearchGPT remains unavailable until a valid interpretation is submitted";
+
+return;
+
+}
+
+if(affordanceRecorded){
+
+return;
+
+}
+
+affordanceRecorded = true;
+
+beginVResearchGPT.dataset.affordanceState =
+"confirmed";
+
+gptCurrentStage.textContent =
+"Begin VResearchGPT selectable";
+
+gptPathStatus.textContent =
+"Selection affordance confirmed";
+
+recordGptEntryEvent({
+label:"Selection affordance confirmed",
+systemBoundary:"Vorgentia Research site",
+evidenceSource:"Automatically observed",
+observableEvidence:
+"Pointer hover or keyboard focus activated the Begin VResearchGPT interaction styling.",
+computingState:
+"Interaction affordance observed.",
+computationalInterpretation:
+"Additional evidence supports the existing Active / Defined Begin-node state; no state transition is required.",
+stateChanges:{},
+validityChanges:{beginNode:1},
+pathStatus:"available",
+boundaryConditions:[
+"Active visual presentation",
+"Pointer or keyboard interaction available"
+],
+derivation:
+"Selectability was confirmed while the Begin node remained in its preserved +1 state."
+});
+
+}
+
+if(beginVResearchGPT){
+
+beginVResearchGPT.addEventListener(
+"mouseenter",
+recordGptAffordance
+);
+
+beginVResearchGPT.addEventListener(
+"focus",
+recordGptAffordance
+);
+
+beginVResearchGPT.addEventListener(
+"click",
+function(event){
+
+if(
+beginVResearchGPT.getAttribute(
+"aria-disabled"
+) === "true"
+){
+
+event.preventDefault();
+
+recordUnresolvedResearchSelection();
+
+document.getElementById(
+"authorMessage"
+).scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+
+gptCurrentStage.textContent =
+"Research State selection required";
+
+gptEvidenceSource.textContent =
+"Automatically observed on this site";
+
+gptNodeValidity.textContent =
+"Begin path not admissible: V(v)=0";
+
+gptPathStatus.textContent =
+"Navigation prevented until one of four interpretations is submitted";
+
+return;
+
+}
+
+beginVResearchGPT.dataset.selectionState =
+"received";
+
+beginVResearchGPT.dataset.pathState =
+"invoked";
+
+gptDestinationConfirmation.classList.add(
+"visible"
+);
+
+gptCurrentStage.textContent =
+"Registered VResearchGPT path invoked";
+
+gptPathStatus.textContent =
+"Destination-side evaluation transferred to ChatGPT";
+
+recordGptEntryEvent({
+label:"Begin VResearchGPT selected",
+systemBoundary:"Vorgentia Research site",
+evidenceSource:"Automatically observed",
+observableEvidence:
+"Click event received on the Begin VResearchGPT link.",
+computingState:
+"User-selection event and registered-link invocation executed.",
+computationalInterpretation:
+"Selection and link-invocation events changed from Inactive / Undefined to Active / Defined.",
+stateChanges:{
+selectionEvent:"+1",
+linkInvocation:"+1"
+},
+validityChanges:{
+selectionEvent:1,
+linkInvocation:1
+},
+pathStatus:"external-evaluation",
+boundaryConditions:[
+"Registered URL present",
+"Link opened in a separate browser tab",
+"External ChatGPT content is not inspected by this site"
+],
+derivation:
+"The observed click activated the registered outgoing relationship. Destination entry remains unverified locally."
+});
+
+}
+);
+
+}
+
+let returnRecorded =
+hasGptEntryEvent("Source page revisited");
+
+document.addEventListener(
+"visibilitychange",
+function(){
+
+if(
+document.visibilityState === "visible" &&
+gptEntryTrace.stateVector.linkInvocation === "+1" &&
+!returnRecorded
+){
+
+returnRecorded = true;
+
+gptDestinationConfirmation.classList.add(
+"visible"
+);
+
+recordGptEntryEvent({
+label:"Source page revisited",
+systemBoundary:"Vorgentia Research site",
+evidenceSource:"Automatically observed",
+observableEvidence:
+"The source page became visible again after the registered external link was invoked.",
+computingState:
+"Source document visibility restored.",
+computationalInterpretation:
+"This event does not establish any destination-side state.",
+stateChanges:{},
+validityChanges:{},
+pathStatus:"awaiting-user-confirmation",
+boundaryConditions:[
+"External destination remains outside the source-page observation boundary"
+],
+derivation:
+"Returning to the source page permits destination observations to be recorded as user-confirmed evidence."
+});
+
+}
+
+}
+);
+
+function validateDestinationConfirmations(){
+
+if(confirmStarter.checked &&
+!confirmDestination.checked){
+
+alert(
+"Confirm that the VResearchGPT destination was displayed before confirming the starter."
+);
+
+return false;
+
+}
+
+if(confirmResponse.checked &&
+(!confirmDestination.checked ||
+!confirmStarter.checked)){
+
+alert(
+"Confirm the destination and active Begin VResearchGPT starter before confirming the opening response."
+);
+
+return false;
+
+}
+
+return true;
+
+}
+
+if(confirmDestinationStates){
+
+confirmDestinationStates.addEventListener(
+"click",
+function(){
+
+if(!validateDestinationConfirmations()){
+
+return;
+
+}
+
+if(
+!confirmDestination.checked &&
+!confirmStarter.checked &&
+!confirmResponse.checked
+){
+
+alert(
+"Select the destination conditions you directly observed."
+);
+
+return;
+
+}
+
+if(
+confirmDestination.checked &&
+gptEntryTrace.stateVector.destination !== "+1"
+){
+
+recordGptEntryEvent({
+label:"VResearchGPT destination confirmed",
+systemBoundary:"ChatGPT / VResearchGPT",
+evidenceSource:"User-confirmed",
+observableEvidence:
+"Visitor confirmed that the registered VResearchGPT destination and identity were displayed.",
+computingState:
+"Destination display observed by the visitor.",
+computationalInterpretation:
+"The destination node is recorded as Active / Defined using user-confirmed evidence.",
+stateChanges:{destination:"+1"},
+validityChanges:{destination:1},
+pathStatus:"destination-confirmed",
+boundaryConditions:[
+"Evidence is user-confirmed",
+"Source page did not inspect ChatGPT"
+],
+derivation:
+"The destination state changed only after explicit visitor confirmation."
+});
+
+}
+
+if(
+confirmStarter.checked &&
+gptEntryTrace.stateVector.starter !== "+1"
+){
+
+recordGptEntryEvent({
+label:"Begin VResearchGPT starter confirmed",
+systemBoundary:"ChatGPT / VResearchGPT",
+evidenceSource:"User-confirmed",
+observableEvidence:
+"Visitor confirmed that the Begin VResearchGPT conversation starter was visible and active.",
+computingState:
+"Destination-side prompt affordance observed by the visitor.",
+computationalInterpretation:
+"The starter node is recorded as Active / Defined and available for selection.",
+stateChanges:{starter:"+1"},
+validityChanges:{starter:1},
+pathStatus:"entry-available",
+boundaryConditions:[
+"VResearchGPT destination previously confirmed",
+"Evidence is user-confirmed"
+],
+derivation:
+"An active starter establishes that the VResearchGPT interaction-entry path is available."
+});
+
+}
+
+if(
+confirmResponse.checked &&
+gptEntryTrace.stateVector.openingResponse !== "+1"
+){
+
+recordGptEntryEvent({
+label:"VResearchGPT conversation begun",
+systemBoundary:"ChatGPT / VResearchGPT",
+evidenceSource:"User-confirmed",
+observableEvidence:
+"Visitor confirmed that Begin VResearchGPT was submitted and an opening response was received.",
+computingState:
+"Prompt submission and response events completed.",
+computationalInterpretation:
+"The prompt-submission and opening-response nodes are recorded as Active / Defined.",
+stateChanges:{
+promptSubmission:"+1",
+openingResponse:"+1"
+},
+validityChanges:{
+promptSubmission:1,
+openingResponse:1
+},
+pathStatus:"complete",
+boundaryConditions:[
+"Destination confirmed",
+"Starter confirmed active",
+"Evidence is user-confirmed"
+],
+derivation:
+"The completed prompt-response interaction establishes that the VResearchGPT conversation began."
+});
+
+}
+
+renderGptEntryTrace();
+
+}
+);
+
+}
+
+function downloadGptTraceFile(filename,content,type){
+
+const file =
+new Blob([content],{type:type});
+
+const url =
+URL.createObjectURL(file);
+
+const link =
+document.createElement("a");
+
+link.href = url;
+link.download = filename;
+document.body.appendChild(link);
+link.click();
+document.body.removeChild(link);
+URL.revokeObjectURL(url);
+
+}
+
+function buildGptTraceText(){
+
+const lines = [];
+
+lines.push(gptEntryTrace.reportTitle.toUpperCase());
+lines.push("");
+lines.push(
+"Organization: " +
+gptEntryTrace.researchOrganization
+);
+lines.push(
+"Trace Version: " +
+gptEntryTrace.traceVersion
+);
+lines.push(
+"Created: " +
+gptEntryTrace.createdAt
+);
+lines.push(
+"Source Page: " +
+gptEntryTrace.sourcePage
+);
+lines.push(
+"Registered Destination: " +
+gptEntryTrace.registeredDestination
+);
+lines.push("");
+lines.push("STATE DEFINITIONS");
+
+Object.keys(gptEntryTrace.stateDefinitions)
+.forEach(function(key){
+
+lines.push(
+key + " = " +
+gptEntryTrace.stateDefinitions[key]
+);
+
+});
+
+lines.push("");
+lines.push("EVIDENCE BOUNDARY");
+lines.push(gptEntryTrace.evidenceBoundary);
+lines.push("");
+lines.push("EVENT TRACE");
+
+gptEntryTrace.events.forEach(function(event){
+
+lines.push("");
+lines.push(
+"Stage " + event.sequence +
+" — " + event.label
+);
+lines.push(
+"Timestamp: " + event.timestamp
+);
+lines.push(
+"System Boundary: " +
+event.systemBoundary
+);
+lines.push(
+"Evidence Source: " +
+event.evidenceSource
+);
+lines.push(
+"Observed: " +
+event.observableEvidence
+);
+lines.push(
+"Computing State: " +
+event.computingState
+);
+lines.push(
+"Computational Interpretation: " +
+event.computationalInterpretation
+);
+
+if(event.changedStates.length){
+
+event.changedStates.forEach(function(change){
+
+lines.push(
+"State Transition: " +
+change.node + " " +
+change.from + " (" +
+change.fromDefinition + ") -> " +
+change.to + " (" +
+change.toDefinition + ")"
+);
+
+});
+
+}
+
+else{
+
+lines.push(
+"State Transition: None; relevant states preserved."
+);
+
+}
+
+lines.push(
+"Preserved State Vector: " +
+JSON.stringify(event.preservedStateVector)
+);
+lines.push(
+"Node-State Validity: " +
+JSON.stringify(event.nodeStateValidity)
+);
+lines.push(
+"Path Status: " +
+event.pathStatus
+);
+lines.push(
+"Q-State Derived: No"
+);
+lines.push(
+"Q Evaluation: " +
+event.qEvaluation.reason
+);
+lines.push(
+"Derivation: " +
+event.derivation
+);
+
+});
+
+lines.push("");
+lines.push("FINAL STATE VECTOR");
+lines.push(
+JSON.stringify(gptEntryTrace.stateVector)
+);
+lines.push("");
+lines.push("FINAL PATH STATUS");
+lines.push(gptEntryTrace.pathStatus);
+
+return lines.join("\n");
+
+}
+
+if(downloadEntryTraceText){
+
+downloadEntryTraceText.addEventListener(
+"click",
+function(){
+
+downloadGptTraceFile(
+"VResearchGPT_Entry_Trace_Report.txt",
+buildGptTraceText(),
+"text/plain"
+);
+
+}
+);
+
+}
+
+if(downloadEntryTraceJson){
+
+downloadEntryTraceJson.addEventListener(
+"click",
+function(){
+
+downloadGptTraceFile(
+"VResearchGPT_Entry_Trace_Log.json",
+JSON.stringify(gptEntryTrace,null,2),
+"application/json"
+);
+
+}
+);
+
+}
+
+if(resetEntryTrace){
+
+resetEntryTrace.addEventListener(
+"click",
+function(){
+
+const confirmed =
+window.confirm(
+"Reset the local VResearchGPT entry trace for this browser tab?"
+);
+
+if(!confirmed){
+
+return;
+
+}
+
+sessionStorage.removeItem(gptEntryTraceKey);
+gptEntryTrace = createGptEntryTrace();
+
+confirmDestination.checked = false;
+confirmStarter.checked = false;
+confirmResponse.checked = false;
+
+gptDestinationConfirmation.classList.remove(
+"visible"
+);
+
+beginVResearchGPT.dataset.affordanceState =
+"available";
+
+beginVResearchGPT.dataset.selectionState =
+"";
+
+affordanceRecorded = false;
+returnRecorded = false;
+
+gptEvidenceSource.textContent =
+"Automatically observed on this site";
+
+setBeginVResearchGPTAvailability(
+researchSelectionIsComplete(),
+false
+);
+
+recordGptEntryEvent({
+label:"Research portal evaluated",
+systemBoundary:"Vorgentia Research site",
+evidenceSource:"Automatically observed",
+observableEvidence:
+"The VResearchGPT launch section, required Research State selection and registered Begin link are present in the rendered document.",
+computingState:
+"Portal, Research State boundary and Begin node rendered.",
+computationalInterpretation:
+"The Begin node is evaluated according to the preserved Research State submission.",
+stateChanges:{},
+validityChanges:{
+portal:1,
+beginNode:
+researchSelectionIsComplete() ? 1 : 0
+},
+pathStatus:
+researchSelectionIsComplete() ?
+"available" : "gated",
+boundaryConditions:[
+"Research State selection required",
+"Registered destination URL is defined"
+],
+derivation:
+"A new local entry trace was initialized."
+});
+
+}
+);
+
+}
+
+if(
+gptEntryTrace.stateVector.linkInvocation === "+1"
+){
+
+gptDestinationConfirmation.classList.add(
+"visible"
+);
+
+}
+
+setBeginVResearchGPTAvailability(
+researchSelectionIsComplete(),
+false
+);
+
+renderGptEntryTrace();
+
 /*======================================================
 INITIALIZE
 ======================================================*/
